@@ -45,7 +45,7 @@ WORKDIR /zap
 RUN curl -s https://raw.githubusercontent.com/zaproxy/zap-admin/master/ZapVersions-dev.xml | xmlstarlet sel -t -v //url |grep -i Linux | wget -q --content-disposition -i - -O - | tar zx --strip-components=1 && \
     curl -s -L https://bitbucket.org/meszarv/webswing/downloads/webswing-2.3-distribution.zip | jar -x && \
     touch AcceptedLicense
-ADD webswing.config /zap/webswing-2.3/webswing.config
+ADD webswing.config /zap/webswing-2.5/webswing.config
 
 RUN chown root:root /zap -R && \
     chown root:root -R /var/lib/jenkins && \
